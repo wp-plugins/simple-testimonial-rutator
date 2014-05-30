@@ -17,17 +17,20 @@ Add "Simple Testimonial Rotator" Responsive Widget on your website.
 == Installation ==
 
 Step 1. Upload simple-testimonial-rutator folder to the `/wp-content/plugins/` directory
+
 Step 2. Activate the plugin through the Plugins menu in WordPress
+
 Step 3. Go to "Settings/Simple Testimonial Rotator" and configure the plugin settings
+
 Step 4. After that find the "Simple Testimonial" (given in under the right side menu) and add your new Testimonial posts
-Step 4. Now finally find the Widget from "Appearance >> Widgtes >> Simple Testimonial" and add where you want to show it.
+
+Step 5. Now finally find the Widget from "Appearance >> Widgtes >> Simple Testimonial" and add where you want to show it.
 
 == Screenshots ==
-
-1. str-settings.png
-2. str-post.png
-3. widget.png
-4. front-end.png
+screenshot1.png
+screenshot2.png
+screenshot3.png
+screenshot4.png
 
 == Changelog == 
 
