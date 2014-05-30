@@ -23,21 +23,22 @@ Step 2. Activate the plugin through the Plugins menu in WordPress
 == Frequently Asked Questions ==
 
 1.How Configure the the Custom Tweets settings?
-
 Answer:Go to "Settings/Simple Testimonial Rotator" and configure the plugin settings
 
 2.How Add/Edit the testimonial posts from admin?
-
 Answer:Find the "Simple Testimonial" (given in under the right side menu) and add/edit your new testimonial posts
 
 3.How add the simple testimonial rutator widget in my site sidebar?
-
 Answer:Find the "Simple Testimonial" Widget from "Appearance >> Widgtes >> Simple Testimonial" and add widget where you want to show it.
 
 == Screenshots ==
+
 1. screenshot-1.png
+
 2. screenshot-2.png
+
 3. screenshot-3.png
+
 4. screenshot-4.png
 
 == Changelog == 
