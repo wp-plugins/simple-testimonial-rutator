@@ -27,10 +27,10 @@ Step 4. After that find the "Simple Testimonial" (given in under the right side 
 Step 5. Now finally find the Widget from "Appearance >> Widgtes >> Simple Testimonial" and add where you want to show it.
 
 == Screenshots ==
-screenshot1.png
-screenshot2.png
-screenshot3.png
-screenshot4.png
+1. screenshot-1.png
+1. screenshot-2.png
+
+
 
 == Changelog == 
 
