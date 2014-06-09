@@ -1,10 +1,24 @@
 <?php
-/*
+/**
+ * 
  * Register Simple Testimonial Rotator 
- * */
-class str_testimonials_widget extends WP_Widget {
+ */
 
-    
+//check widget active or not
+
+add_action( 'wp_enqueue_scripts', 'str_testimonials_scripts' );
+add_action('wp_head','str_load_inline_js');
+
+
+
+//register style and scriptit files
+function str_testimonials_scripts() {
+wp_enqueue_script( 'jquery' ); // wordpress jQuery
+wp_register_style( 'simple_testimonial_rotator_widget_style', plugins_url( 'simple-testimonial-rotator/widget/str-testimonial-widget.css' ) );
+wp_enqueue_style( 'simple_testimonial_rotator_widget_style' );
+}
+
+class str_testimonials_widget extends WP_Widget {
         function str_testimonials_widget() {
             $widget_ops = array('description' => __('Display auto rutate testimonials in your sidebar', 'Simple Testimonial Rotator'));
             $this->WP_Widget('str_testimonials', __('Simple Testimonial Rotator'), $widget_ops);
@@ -47,14 +61,15 @@ class str_testimonials_widget extends WP_Widget {
         }
     }
 
-    ### Function: Init Simple Testiomonial Rotator Widget
-    add_action('widgets_init', 'str_testiomonials_init');
-    function str_testiomonials_init() {
+### Function: Init Simple Testiomonial Rotator Widget
+add_action('widgets_init', 'str_testiomonials_init');
+function str_testiomonials_init() {
         register_widget('str_testimonials_widget');
     }
-    
-    
- add_action('wp_head','str_load_inline_js');
+
+/*
+ * Load jQuery code in header   
+ */
 
 function str_load_inline_js()
 {
@@ -116,13 +131,15 @@ if( $str_query->have_posts() ) {
 			  ?>
 			 </span>
 			  <?php if(get_post_meta(get_the_ID(), '_str_testimonial_designation', true)!=''): echo '<span class="authorRole">'.get_post_meta(get_the_ID(), '_str_testimonial_designation', true).'</span>';endif; ?>
+						 <?php if($getOptions['str_viewall']==1): 
+echo '<span class="viewall"><a href="'.$getOptions['str_viewall_page'].'">View All</a></span>';
+endif;?>
 			 </div>
 	   </div>
 <?php
 endwhile;
 } 
-wp_reset_query();
-?>
+wp_reset_query();?>
 	</div>
 <?php
 

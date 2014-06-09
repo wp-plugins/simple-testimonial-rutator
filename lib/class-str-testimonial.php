@@ -173,4 +173,74 @@ function str_testimonial_save_meta_box_data( $post_id ) {
 	update_post_meta( $post_id, '_str_testimonial_url', $my_data );
 }
 add_action( 'save_post', 'str_testimonial_save_meta_box_data' );
+
+
+/*
+ * str Sortcode
+ * 
+ */
+
+add_shortcode('str_testimonials','get_all_testimonials');
+
+
+function get_all_testimonials() {
+//get the post
+$getOptions =get_str_testimonials_options();
+if($getOptions['str_sortby']!=''):$str_sortBy=$getOptions['str_sortby']; else: $str_sortBy='title'; endif;
+if($getOptions['str_orderby']!=''):$str_orderby=$getOptions['str_orderby']; else: $str_orderby='ASC'; endif;
+$str_query = new WP_Query('post_type=str_testimonial&post_status=publish&orderby='.$str_sortBy.'&order='.$str_orderby);
+ // Restore global post data stomped by the_post().
+
+?>
+<div id="str_testimonial_list">
+<?php
+if( $str_query->have_posts() ) {
+  while ($str_query->have_posts()) : $str_query->the_post(); ?>
+	    <div id="str-<?php echo get_the_ID();?>">
+	    <blockquote class="style1">
+			<div class="content"><?php the_content();?></div>
+			
+			<div  class="str_author">
+			<?php //get the author image
+			echo get_the_post_thumbnail(get_the_ID(), array(50,40) );?>  
+			
+			<span>
+			<?php
+			if(get_post_meta(get_the_ID(), '_str_testimonial_url', true)==''): 
+			 //get author title
+			 the_title();
+			 else:
+			 echo '<a href="'.get_post_meta(get_the_ID(), '_str_testimonial_url', true).'" target="_blank">'.get_the_title().'</a>';
+			 endif;
+			  ?>
+			   <?php if(get_post_meta(get_the_ID(), '_str_testimonial_designation', true)!=''): echo '<span class="authorRole">'.get_post_meta(get_the_ID(), '_str_testimonial_designation', true).'</span>';endif; ?>
+			 </span>
+			 
+			 </div>
+	   </blockquote></div>
+	    
+<?php
+endwhile;
+} 
+wp_reset_query();
+?>
+</div>
+<?php 
+} // End str testiomonial content part
+
+/*
+ * Check str_testimonials shortcode exist or not
+ */
+ 
+if(shortcode_exists( 'str_testimonials' )):
+add_action( 'wp_enqueue_scripts', 'str_testimonials_style' );
+endif;
+
+//register list page style files
+function str_testimonials_style() {
+wp_enqueue_script( 'jquery' ); // wordpress jQuery
+wp_register_style( 'simple_testimonial_rotator_style', plugins_url( '../str-style.css',__FILE__) );
+wp_enqueue_style( 'simple_testimonial_rotator_style' );
+}
+
 ?>

@@ -5,6 +5,8 @@
 #str_testimonial cite {display:block; background:#FAEBBC;}
 #str_testimonial .str_author span {vertical-align:top;}
 
+#str_testimonial .viewall  {display:block;padding-top:10px;}
+
 #str_testimonial .str_author {    background: none repeat scroll 0 0 #FAEBBC;
     border-bottom: 1px solid #E1CC89;
     display: block;

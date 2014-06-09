@@ -34,6 +34,10 @@ Answer:Find the "Simple Testimonial" (given in under the right side menu) and ad
 
 Answer:Find the "Simple Testimonial" Widget from "Appearance >> Widgtes >> Simple Testimonial" and add widget where you want to show it.
 
+3.Can i show all testimonials on any specific page?
+
+Answer:Yes,you have just need to create a new testimonial page and add this [str_testimonials] shorcode, after add this shortcode all testimonials will be publish on that page
+
 == Screenshots ==
 
 1. screenshot-1.png
@@ -44,10 +48,19 @@ Answer:Find the "Simple Testimonial" Widget from "Appearance >> Widgtes >> Simpl
 
 4. screenshot-4.png
 
+4. screenshot-5.png
+
 == Changelog == 
 
+= 1.1 = 
+ 
+ *Added the shortcode "[str_testimonials]" for publish all testimonials on a single page
+ 
+ *Fixed some browsers issue
+ 
+ *Added "View All" link options from admin
+ 
 = 1.0 = 
  * First stable release 
-
 
 

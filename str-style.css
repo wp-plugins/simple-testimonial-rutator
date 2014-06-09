@@ -1,0 +1,38 @@
+﻿#str_testimonial_list {width:100%;height: auto;padding: 10px;}
+#str_testimonial_list blockquote {padding:5px; margin:inherit; width:100%; height:auto;}
+#str_testimonial_list cite img {float:left;padding:5px}
+#str_testimonial_list cite {display:block; background:#FAEBBC;}
+#str_testimonial_list .str_author span {vertical-align:top; display: block;}
+#str_testimonial_list a {color:#A3220A;}
+#str_testimonial_list p {margin:inherit;}
+#str_testimonial_list .str_author {
+    display: block;
+    float: right;
+    padding-right: 5px;
+    text-align: right;
+    width: auto;
+    font-weight:bold;
+    color:#A3220A;
+}
+#str_testimonial_list .str_author img {}
+#str_testimonial_list .authorRole {display:block;font-weight:normal;}
+#str_testimonial_list blockquote.style1 {
+  font: 14px/20px italic Times, serif;
+  padding: 8px;
+  background-color: #faebbc;
+  border-top: 1px solid #e1cc89;
+  margin: 5px;
+   float: left;
+  background-image: url(images/openquote1.gif);
+  background-position: top left;
+  background-repeat: no-repeat;
+  text-indent: 23px;
+  }
+#str_testimonial_list  blockquote.style1 .content {
+     display: block;
+     background-image: url(images/closequote1.gif);
+     background-repeat: no-repeat;
+     background-position: bottom right;
+   }
+
+

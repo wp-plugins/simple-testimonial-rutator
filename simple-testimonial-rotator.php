@@ -29,12 +29,11 @@ add_action('admin_init','str_testimonials_init');
 function str_testimonials_init(){
 
 	register_setting('str_testimonial_options','str_effect');
-
 	register_setting('str_testimonial_options','str_speed');
-
-	register_setting('str_testimonial_options','str_sortby');
-	
+	register_setting('str_testimonial_options','str_sortby');	
 	register_setting('str_testimonial_options','str_orderby');
+	register_setting('str_testimonial_options','str_viewall');
+	register_setting('str_testimonial_options','str_viewall_page');
 } 
 
 
@@ -47,13 +46,9 @@ function str_testimonials_init(){
 */
 
 function str_testimonials_admin_option_page(){ ?>
-
-	<div style="width: 50%; padding: 10px; border: 1px dashed #ccc; margin: 10px;"> 
-
+	<div> 
 	<h2>Simple Testimonial Rutator Settings</h2>
-	
 	<p>Please fill all options value.</p>
-
 <!-- Start Options Form -->
 	<form action="options.php" method="post" id="str-testimonial-admin-form">
 		<table class="simple-testimonial-rotator">
@@ -64,19 +59,23 @@ function str_testimonials_admin_option_page(){ ?>
 				<option value="fade" <?php if(get_option('str_effect')=='fade'){echo 'selected="selected"';}?>>fade</option>
 				</select>
 				</td>
-				<td rowspan="10" valign="top" style="border-left: 1px solid rgb(204, 204, 204); padding-left: 20px;"><div style="width: 100%; font-size: 24px;">
-	<br>Author:<a href="http://raghunathgurjar.wordpress.com">Raghunath Gurjar</a>
-	<br><br><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=WN785E5V492L4" target="_blank" style="font-size: 17px; font-weight: bold;">Donate for this plugin</a>
+				<td rowspan="10" valign="top" style="border-left: 1px solid rgb(204, 204, 204); padding-left: 20px;">
+	<h2>Plugin Author:</h2>
+					<div style="font-size: 14px;">
+	<img src="<?php echo  plugins_url( 'images/raghu.jpg' , __FILE__ );?>" width="100" height="100"><br><a href="http://raghunathgurjar.wordpress.com" target="_blank">Raghunath Gurjar</a><br><br>Author Blog <a href="http://raghunathgurjar.wordpress.com" target="_blank">http://raghunathgurjar.wordpress.com</a>
+	<br><br><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=WN785E5V492L4" target="_blank" style="font-size: 17px; font-weight: bold;">Donate for this plugin</a><br><br>
+	Other Plugins:<br>
+	<ul>
+		<li><a href="http://wordpress.org/plugins/custom-share-buttons-with-floating-sidebar" target="_blank">Custom share buttons with floating sidebar</a></li>
+		</ul>
 	</div></td>
-			</tr>
-			<tr><td colspan="3">&nbsp;</td></tr>		
+			</tr>	
 			<tr>
 				<th><?php echo 'Delay Time:';?></th>
 				<td>
 					<input type="text" id="str_speed" name="str_speed" value="<?php echo esc_attr(get_option('str_speed')); ?>" size="5"/><br>Default time is 5000
 				</td>
 			</tr>
-<tr><td colspan="3">&nbsp;</td></tr>
 			<tr>
 				<th><?php echo 'Sort By:';?></th>
 				<td>
@@ -86,7 +85,6 @@ function str_testimonials_admin_option_page(){ ?>
 				</select>
 				</td>
 			</tr>
-			<tr><td colspan="3">&nbsp;</td></tr>
 			<tr>
 				<th><?php echo 'Order By:';?></th>
 				<td>
@@ -96,7 +94,15 @@ function str_testimonials_admin_option_page(){ ?>
 				</select>
 				</td>
 			</tr>
-				<tr><td colspan="3">&nbsp;</td></tr>		
+			<tr>
+				<th><?php echo 'View All:';?></th>
+				<td>
+					<input type="checkbox" id="str_viewall" name="str_viewall" <?php if(get_option('str_viewall')!=''):echo 'checked="checked"';endif; ?> size="5" value="1"/>Show the "View All" links in testiomonial sidebar
+					<?php  if(get_option('str_viewall')!=''):?><br>
+						<input type="text" id="str_viewall_page" name="str_viewall_page" value="<?php echo esc_attr(get_option('str_viewall_page')); ?>" size="25" placeholder="Enter testiomonals list page url"/><br>
+					<?php endif;?>
+				</td>
+			</tr>
 			<tr>
 				<th>&nbsp;</th>
 				<td><?php echo get_submit_button('Save Settings','button-primary','submit','','');?></td>
@@ -140,18 +146,10 @@ include dirname( __FILE__ ) .'/lib/class-str-testimonial.php';
 -----------------------------------------------------------------------------------------------
 */
 
-//register style and scriptit files
-function str_testimonials_scripts() {
-wp_enqueue_script( 'jquery' ); // wordpress jQuery
-wp_register_style( 'simple_testimonial_rotator_widget_style', plugins_url( 'simple-testimonial-rotator/widget/str-testimonial-widget.css' ) );
-wp_enqueue_style( 'simple_testimonial_rotator_widget_style' );
-}
-
-add_action( 'wp_enqueue_scripts', 'str_testimonials_scripts' );
-
-
 //Include Widget files
 include dirname( __FILE__ ) .'/widget/str-testimonial-wdget.php';
+
+
 
 /* 
 
@@ -169,6 +167,8 @@ function str_testimonial_uninstall(){
 	delete_option('str_speed');
 	delete_option('str_sortby');
 	delete_option('str_orderby');
+	delete_option('str_viewall');
+	delete_option('str_viewall_page');
 } 
 
 
