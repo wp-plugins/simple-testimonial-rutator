@@ -1,0 +1,36 @@
+﻿#str_testimonial {position: relative; width:100%;height: auto;padding: 10px; }
+#str_testimonial > div { position: absolute;top: 10px;left: 10px;right: 10px;bottom: 10px; }
+#str_testimonial blockquote {padding:5px; margin:inherit; width:100%; height:auto;}
+#str_testimonial cite img {float:left;padding:5px}
+#str_testimonial cite {display:block; background:#FAEBBC;}
+#str_testimonial .str_author span {vertical-align:top;}
+
+#str_testimonial .str_author {    background: none repeat scroll 0 0 #FAEBBC;
+    border-bottom: 1px solid #E1CC89;
+    display: block;
+    float: left;
+    font-weight: bold;
+    border-top:1px dashed #ccc;
+    padding: 5px;
+    width: 100%;}
+#str_testimonial .str_author img {float:left; padding-right:3px; padding-bottom:5px;}
+#str_testimonial .authorRole {float:left;}
+blockquote.style1 {
+  font: 14px/20px italic Times, serif;
+  padding: 8px;
+  background-color: #faebbc;
+  border-top: 1px solid #e1cc89;
+  margin: 5px;
+  background-image: url(../images/openquote1.gif);
+  background-position: top left;
+  background-repeat: no-repeat;
+  text-indent: 23px;
+  }
+  blockquote.style1 div {
+     display: block;
+     background-image: url(../images/closequote1.gif);
+     background-repeat: no-repeat;
+     background-position: bottom right;
+   }
+
+
