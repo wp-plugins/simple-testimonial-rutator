@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: Testimonial,Testimonial Rotator,Testimonial Slider, Responsive Testimonial Rotator, Simple Testimonials,Testimonials Widget
 Requires at least: 2.8
 Tested up to: 3.9.1
-Stable tag: 1.0
+Stable tag: 1.1
 
 Add "Simple Testimonial Rotator" Responsive Widget on your website.
 
