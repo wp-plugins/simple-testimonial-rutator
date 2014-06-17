@@ -2,9 +2,9 @@
 Contributors: india-web-developer
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=WN785E5V492L4
 Tags: Testimonial,Testimonial Rotator,Testimonial Slider, Responsive Testimonial Rotator, Simple Testimonials,Testimonials Widget
-Requires at least: 2.7
+Requires at least: 2.8
 Tested up to: 3.9.1
-Stable tag: 1.1
+Stable tag: 1.2
 
 Add "Simple Testimonial Rotator" Responsive Widget on your website.
 
@@ -52,15 +52,15 @@ Answer:Yes,you have just need to create a new testimonial page and add this [str
 
 == Changelog == 
 
+= 1.2 = 
+ 
+ *Added "View All" link options from admin
+
 = 1.1 = 
  
  *Added the shortcode "[str_testimonials]" for publish all testimonials on a single page
  
  *Fixed some browsers issue
  
- *Added "View All" link options from admin
- 
 = 1.0 = 
  * First stable release 
-
-
