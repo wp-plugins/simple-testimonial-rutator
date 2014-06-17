@@ -16,7 +16,7 @@ Add [str_testimonials] Shortcode Into Any Page For Display All Testimonials.
 
 "Simple Testimonial Rotator Widget" is a responsive widget.
 
-For display to all testiomonial on any page add =[str_testimonials]= shortcode on that page.
+For display to all testiomonial on any page add [str_testimonials] shortcode on that page.
 
 == Installation ==
 
