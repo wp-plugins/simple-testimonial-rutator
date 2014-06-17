@@ -4,15 +4,19 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: Testimonial,Testimonial Rotator,Testimonial Slider, Responsive Testimonial Rotator, Simple Testimonials,Testimonials Widget
 Requires at least: 2.8
 Tested up to: 3.9.1
-Stable tag: 1.2
+Stable tag:1.2
 
-Add "Simple Testimonial Rotator" Responsive Widget on your website.
+Add "Simple Testimonial Rotator" Responsive Widget On Your Website Sidebar.
+
+Add [str_testimonials] Shortcode Into Any Page For Display All Testimonials.
 
 == Description ==
 
 "Simple Testimonial Rotator" is a very simple plugin for add to "Auto Rotator Testimonials" widget (with fade effect) on your site without adding any extra js files.
 
 "Simple Testimonial Rotator Widget" is a responsive widget.
+
+For display to all testiomonial on any page add [str_testimonials] shortcode on that page.
 
 == Installation ==
 
@@ -34,9 +38,9 @@ Answer:Find the "Simple Testimonial" (given in under the right side menu) and ad
 
 Answer:Find the "Simple Testimonial" Widget from "Appearance >> Widgtes >> Simple Testimonial" and add widget where you want to show it.
 
-3.Can i show all testimonials on any specific page?
+3.How i can publish all testimonials on any specific page?
 
-Answer:Yes,you have just need to create a new testimonial page and add this [str_testimonials] shorcode, after add this shortcode all testimonials will be publish on that page
+Answer:You have just need to create a new testimonial page and add this [str_testimonials] shortcode, after add this shortcode all testimonials will be publish on that page!
 
 == Screenshots ==
 
