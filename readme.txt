@@ -6,9 +6,9 @@ Requires at least: 2.8
 Tested up to: 3.9.1
 Stable tag:1.2
 
-Add "Simple Testimonial Rotator" Responsive Widget On Your Website Sidebar.
+Add "Simple Testimonial Rotator" responsive widget on your website sidebar.
 
-Add [str_testimonials] Shortcode Into Any Page For Display All Testimonials.
+Add [str_testimonials] shortcode for display all testimonials.
 
 == Description ==
 
