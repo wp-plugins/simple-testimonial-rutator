@@ -58,8 +58,6 @@ Answer:Yes,you have just need to create a new testimonial page and add this [str
  
  *Fixed some browsers issue
  
- *Added "View All" link options from admin
- 
 = 1.0 = 
  * First stable release 
 
