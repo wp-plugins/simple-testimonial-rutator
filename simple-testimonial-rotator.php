@@ -3,7 +3,7 @@
 Plugin Name: Simple Testimonial Rotator
 Plugin URI: http://raghunathgurjar.wordpress.com
 Description: "Simple Testimonial Rotator" is a very simple plugins for add to testimonials on your site. 
-Version: 1.0
+Version: 1.1
 Text Domain: raghunath
 Author: Raghunath Gurjar
 Author URI: http://www.facebook.com/raghunathprasadgurjar
