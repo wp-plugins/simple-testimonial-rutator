@@ -1,14 +1,12 @@
 === Simple Testimonial Rotator===
 Contributors: india-web-developer
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=WN785E5V492L4
-Tags: Testimonial,Testimonial Rotator,Testimonial Slider, Responsive Testimonial Rotator, Simple Testimonials,Testimonials Widget
+Tags: Testimonials,Testimonials Rotator,Testimonials Slider, Responsive Testimonials Rotator, Simple Testimonials,Testimonials Widget,wp testimonials,wordpress testimonials
 Requires at least: 2.8
 Tested up to: 3.9.1
 Stable tag:1.2
 
-Add "Simple Testimonial Rotator" responsive widget on your website sidebar.
-
-Add [str_testimonials] shortcode for display all testimonials.
+Add "Simple Testimonial Rotator" widget in site sidebar and use [str_testimonials] shortcode for display all testimonials.
 
 == Description ==
 
@@ -16,7 +14,7 @@ Add [str_testimonials] shortcode for display all testimonials.
 
 "Simple Testimonial Rotator Widget" is a responsive widget.
 
-For display to all testiomonial on any page add [str_testimonials] shortcode on that page.
+For display to all testimonial on any page add [str_testimonials] shortcode on that page.
 
 == Installation ==
 
