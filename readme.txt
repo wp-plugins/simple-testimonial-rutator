@@ -6,7 +6,7 @@ Requires at least: 2.8
 Tested up to: 3.9.1
 Stable tag:1.2
 
-Add "Simple Testimonial Rotator" widget in site sidebar and use [str_testimonials] shortcode for display all testimonials.
+Add "Simple Testimonial Rotator" widget in site sidebar and use [str_testimonials] shortcode for display to all testimonials.
 
 == Description ==
 
