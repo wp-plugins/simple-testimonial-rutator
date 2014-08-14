@@ -1,5 +1,5 @@
 ﻿#str_testimonial {position: relative; width:100%;height: auto;padding: 10px; }
-#str_testimonial > div { position: absolute;top: 10px;left: 10px;right: 10px;bottom: 10px; }
+
 #str_testimonial blockquote {padding:5px; margin:inherit; width:100%; height:auto;}
 #str_testimonial cite img {float:left;padding:5px}
 #str_testimonial cite {display:block; background:#FAEBBC;}
@@ -17,7 +17,7 @@
     width: 100%;}
 #str_testimonial .str_author img {float:left; padding-right:3px; padding-bottom:5px;}
 #str_testimonial .authorRole {float:left;}
-blockquote.style1 {
+#str_testimonial blockquote.style1 {
   font: 14px/20px italic Times, serif;
   padding: 8px;
   background-color: #faebbc;
@@ -28,11 +28,70 @@ blockquote.style1 {
   background-repeat: no-repeat;
   text-indent: 23px;
   }
-  blockquote.style1 div {
+ #str_testimonial blockquote.style1 div {
      display: block;
      background-image: url(../images/closequote1.gif);
      background-repeat: no-repeat;
      background-position: bottom right;
    }
+   
+#str_testimonial_random   #str_testimonial {padding:0 10px 10px;}
 
+#str_testimonial_random   #str_testimonial .str_author span{float:left; width:100%;}
 
+#str_testimonial_random .viewall {display:inline-block;width:100%;}
+#str_testimonial_random .viewall a {float: right;}
+
+#str_testimonial_random .clear {clear: both; padding-bottom: 60px;}
+
+.clear {
+    clear: both;
+    display: block;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    width: 0;
+}
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+    line-height: 0;
+}
+.clearfix:after, *:after {
+    clear: both;
+}
+
+/* Random widget on page */
+.row{margin:0px; padding:0px; position:relative; min-height:85px;}
+.row ul{margin:0px; padding:0px; list-style:none;}
+.row ul li{margin:0px; padding:0px; list-style:none; position:absolute;}
+body{background:url(img/bg.gif) repeat;color:#313131;font-family:Georgia,sans-serif;font-size:15px;}
+.block{
+	width:100%;
+	padding:10px 6px 0 6px;
+	margin:0;
+	position: relative;
+}
+
+.block .photo{background:url(img/photo-bg.png) no-repeat center;margin-right:6px;position:relative;float:left;}
+.block .photo img{max-width:115px;max-height:115px;overflow:hidden;position:absolute;}
+.block .photo img.photo-bg{z-index:1;}
+.block .photo img.photo{left:0;}
+.block p.content{
+	font-style:italic;
+	line-height:24px;
+	padding-left:25px;
+	margin-left:0px;
+	position:relative;
+	overflow:hidden;
+	background:#FAEBBC;
+	margin:0px;
+}
+.block p.content span {text-indent;}
+.block p.content span.laquo{background:url(../images/openquote1.gif) no-repeat;width:25px;height:25px;position:absolute;left:0;top:4px;display:block;}
+.block p.content span.raquo{background:url(../images/closequote1.gif) no-repeat right 4px;width:25px;height:25px;padding-left:4px;display:inline-block;}
+.block .sign{text-align:left;}
+.block .sign a{color:#577302;font-family:Arial,sans-serif;font-size:13px;text-decoration:none;}
+.block .sign a:hover{text-decoration:underline;}
+.block .sign p{color:#5a5a5a;font-size:12px;line-height:15px;margin-top:6px;}
+.view-all{margin:0px;   bottom:0px; float:right; text-align:right;}

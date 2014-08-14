@@ -23,16 +23,17 @@
   border-top: 1px solid #e1cc89;
   margin: 5px;
    float: left;
-  background-image: url(images/openquote1.gif);
-  background-position: top left;
-  background-repeat: no-repeat;
   text-indent: 23px;
   }
-#str_testimonial_list  blockquote.style1 .content {
-     display: block;
-     background-image: url(images/closequote1.gif);
-     background-repeat: no-repeat;
-     background-position: bottom right;
-   }
+#str_testimonial_list div.content {background: none repeat scroll 0 0 #FAEBBC;
+    font-style: italic;
+    line-height: 24px;
+    margin: 0;
+    overflow: hidden;
+    padding-left: 10px;
+    position: relative;}
+#str_testimonial_list div.content span.laquo{background:url(images/openquote1.gif) no-repeat;width:25px;height:25px;position:absolute;left:0;top:4px;display:block;}
+#str_testimonial_list div.content span.raquo{background:url(images/closequote1.gif) no-repeat right 4px;width:25px;height:25px;padding-left:4px;display:inline-block;}
+
 
 

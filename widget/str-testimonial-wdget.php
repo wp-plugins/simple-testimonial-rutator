@@ -75,7 +75,8 @@ function str_load_inline_js()
 {
 	$getOptions =get_str_testimonials_options();
 	$delayTimeVal=$getOptions['str_speed'];
-	if($delayTimeVal!=''):$delayTime=$delayTimeVal;else:$delayTime='5000'; endif;
+	$delayTimeVal=5000;
+	if($delayTimeVal!=''){$delayTime=$delayTimeVal;}else{$delayTime=5000; };
 	
 	$jscnt ="<script>
 		jQuery(function() {
@@ -86,9 +87,9 @@ function str_load_inline_js()
 			    .next()
 			    .fadeIn(1000)
 			    .end()
-			    .appendTo('#str_testimonial');
-			},  ".$delayTimeVal.");
-		});
+			    .appendTo('#str_testimonial')
+			},  ".$delayTimeVal.")
+		})
 	</script>";
 	
 	echo $jscnt;
@@ -142,6 +143,52 @@ endwhile;
 wp_reset_query();?>
 	</div>
 <?php
-
 }
+
+
+function get_str_random_testimonials() {
+//get the post
+$getOptions =get_str_testimonials_options();
+if($getOptions['str_sortby']!=''):$str_sortBy=$getOptions['str_sortby']; else: $str_sortBy='title'; endif;
+if($getOptions['str_orderby']!=''):$str_orderby=$getOptions['str_orderby']; else: $str_orderby='ASC'; endif;
+$str_query = new WP_Query('post_type=str_testimonial&post_status=publish&orderby='.$str_sortBy.'&order='.$str_orderby);
+
+ // Restore global post data stomped by the_post().
+
+?>
+<?php if($getOptions['str_viewall']==1): echo '<div class="view-all"><a href="'.$getOptions['str_viewall_page'].'">View All</a></div>';endif;?>
+
+<div id="str_testimonial_random">
+<div class="row">
+
+<div id="str_testimonial" class="clearfix">
+<?php 
+if( $str_query->have_posts() ) {
+  while ($str_query->have_posts()) : $str_query->the_post(); ?>
+    
+<div class="block">
+		<p class="content"><span class="laquo">&nbsp;</span><?php echo substr(strip_tags(get_the_content()),0,250);?><?php if(strlen(strip_tags(get_the_content())) > 250){ echo '....';}?><span class="raquo">&nbsp;</span></p>
+		<span class="sign">
+			<?php if(get_post_meta(get_the_ID(), '_str_testimonial_url', true)==''): 
+			 //get author title
+			 the_title();
+			 else:
+			 echo '<a href="'.get_post_meta(get_the_ID(), '_str_testimonial_url', true).'" target="_blank">'.get_the_title().'</a>';
+			 endif;
+			  ?>
+			<?php if(get_post_meta(get_the_ID(), '_str_testimonial_designation', true)!=''): echo '<p>'.get_post_meta(get_the_ID(), '_str_testimonial_designation', true).'</p>p>';endif; ?>
+		</span>
+	</div>
+<?php
+endwhile;
+} 
+wp_reset_query();
+?>
+</div>
+</div>
+</div>
+<?php
+}
+/* Shortcode for display the testimonial rutator*/
+add_shortcode('str-random','get_str_random_testimonials');
 ?>

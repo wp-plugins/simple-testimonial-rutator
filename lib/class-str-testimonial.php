@@ -198,7 +198,7 @@ if( $str_query->have_posts() ) {
   while ($str_query->have_posts()) : $str_query->the_post(); ?>
 	    <div id="str-<?php echo get_the_ID();?>">
 	    <blockquote class="style1">
-			<div class="content"><?php the_content();?></div>
+			<div class="content"><span class="laquo">&nbsp;</span><?php echo strip_tags(get_the_content());?><span class="raquo">&nbsp;</span></div>
 			
 			<div  class="str_author">
 			<?php //get the author image
