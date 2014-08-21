@@ -58,7 +58,7 @@ add_filter('gettext', 'str_testimonial_change_add_psot_title', 20, 3);
 **/
 function str_testimonial_change_add_psot_title($newContent,$oldContent) {
   
-  if($_GET['post_type'] == 'str_testimonial')  {
+  if( isset($_GET['post_type']) && $_GET['post_type'] == 'str_testimonial')  {
     //make the changes to the text
        if($oldContent=='Add New Post'):
           $newContent = __( 'Add New Testimonial');
