@@ -3,7 +3,7 @@
 Plugin Name: Simple Testimonial Rotator
 Plugin URI: http://raghunathgurjar.wordpress.com
 Description: "Simple Testimonial Rotator" is a very simple plugins for add to testimonials on your site. 
-Version: 1.2
+Version: 1.3
 Text Domain: raghunath
 Author: Raghunath Gurjar
 Author URI: http://www.facebook.com/raghunathprasadgurjar
@@ -106,7 +106,11 @@ function str_testimonials_admin_option_page(){ ?>
 			<tr>
 				<th>&nbsp;</th>
 				<td><?php echo get_submit_button('Save Settings','button-primary','submit','','');?></td>
-			</tr>	
+			</tr>
+			<tr><td colspan="3">&nbsp;</td></tr>	
+			<tr><td colspan="3"><strong>Shortcode</strong></td></tr>
+			<tr><td colspan="3">[str-random] for add to testimonial rotator on any page</td></tr>
+			<tr><td colspan="3">[str_testimonials] for publish all testimonials on a single page</td></tr>
 			<tr><td colspan="3">&nbsp;</td></tr>		
 		</table>
     <?php settings_fields('str_testimonial_options'); ?>
