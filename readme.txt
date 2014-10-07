@@ -14,6 +14,18 @@ Add "Simple Testimonial Rotator" Responsive Widget on your website.
 
 "Simple Testimonial Rotator Widget" is a responsive widget.
 
+= Features =
+
+ * Rotator Widget
+ * Shortcode for "Testimonial Rotator" & "Testimonial List"
+ * Option for manage the Effect
+
+= Shortcode =
+
+ * [str_testimonials] : Display all Testimonials
+ * [str-random] : Add rotator on any post/page
+
+
 == Installation ==
 
 Step 1. Upload simple-testimonial-rutator folder to the `/wp-content/plugins/` directory
