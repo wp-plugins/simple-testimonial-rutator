@@ -1,6 +1,8 @@
 <?php
 /*
- *  Define all Simple Testimonial Rutator Functions
+ * Simple Testimonial Rutator 
+ * @define all functions
+ * @register_post_type
  * */
 
 /*
@@ -39,7 +41,7 @@ add_action( 'add_meta_boxes', 'str_testimonial_change_featured_meta_boxes_title'
 
 function str_testimonial_change_featured_meta_boxes_title() {
  
-	if ( $_GET['post_type'] === 'str_testimonial' ) {
+	if (isset($_GET['post_type']) && $_GET['post_type'] == 'str_testimonial' ) {
 		//Remove the exist Featured Image Metabox Div
 		remove_meta_box( 'postimagediv', 'str_testimonial', 'side' );
 		//add new metaboxes DIV
@@ -236,11 +238,90 @@ if(shortcode_exists( 'str_testimonials' )):
 add_action( 'wp_enqueue_scripts', 'str_testimonials_style' );
 endif;
 
+
 //register list page style files
 function str_testimonials_style() {
 wp_enqueue_script( 'jquery' ); // wordpress jQuery
 wp_register_style( 'simple_testimonial_rotator_style', plugins_url( '../str-style.css',__FILE__) );
+wp_register_script( 'simple_testimonial_rotator_js', plugins_url( 'js/jquery.cycle.all.lat.js',__FILE__) );
 wp_enqueue_style( 'simple_testimonial_rotator_style' );
+wp_enqueue_script( 'simple_testimonial_rotator_js');
 }
 
+function get_str_random_testimonial() {
+/** Get Testimonial Content*/
+
+$getOptions =get_str_testimonials_options();
+if($getOptions['str_sortby']!=''):$str_sortBy=$getOptions['str_sortby']; else: $str_sortBy='title'; endif;
+if($getOptions['str_orderby']!=''):$str_orderby=$getOptions['str_orderby']; else: $str_orderby='ASC'; endif;
+$str_query = new WP_Query('post_type=str_testimonial&post_status=publish&orderby='.$str_sortBy.'&order='.$str_orderby);
+
+$effect=$getOptions['str_effect'];
+
+if($effect==''){$effect='fade';}
+
+$delayTimeVal=$getOptions['str_speed'];
+$delayTimeVal=5000;
+if($delayTimeVal!=''){$delayTime=$delayTimeVal;}else{$delayTime=5000; };
+
+if($getOptions['str_content_limit']!=''):$content_limit=$getOptions['str_content_limit'];else:$content_limit="300";endif;
+
+
+ // Restore global post data stomped by the_post().
+$script="<script type='text/javascript'>
+jQuery(document).ready(function() {
+    jQuery('#strTestimonials').cycle({
+        fx: '".$effect."', // choose your transition type, ex: fade, scrollUp, scrollRight, shuffle
+        speed:".$delayTime.", 
+		delay:0,
+		/*fit:true,*/
+		
+     });
+});
+</script>"; 
+ 
+ 
+$strContent='<div id="strRandom">'; 
+$strContent.=$script;
+$strContent.='<div id="strTestimonials" class="strTestimonial">';
+if( $str_query->have_posts() ) {
+  while ($str_query->have_posts()) : $str_query->the_post();
+  
+if(strlen(strip_tags(get_the_content())) > $content_limit){ $moreContent='...';}else{$moreContent='';}
+  
+  if(get_post_meta(get_the_ID(), '_str_testimonial_url', true)==''): 
+			 //get author title
+			 $authorName=get_the_title();
+			 else:
+			$authorName='<a href="'.get_post_meta(get_the_ID(), '_str_testimonial_url', true).'" target="_blank">'.get_the_title().'</a>';
+			 endif;
+		
+ if(get_post_meta(get_the_ID(), '_str_testimonial_designation', true)!=''): 
+ $authorDesignation='<span class="designation">'.get_post_meta(get_the_ID(), '_str_testimonial_designation', true).'</span>';
+ else:
+ $authorDesignation='';
+ endif; 
+ 	 
+  $strContent.='<blockquote>';
+    
+  $strContent.='<p><span class="laquo">&nbsp;</span>'.substr(strip_tags(get_the_content()),0,$content_limit).$moreContent.'<span class="raquo">&nbsp;</span></p>';
+
+  $strContent.='<cite>- '.$authorName.$authorDesignation.'</cite>';
+			  
+  $strContent.='</blockquote>';
+  
+  endwhile;
+} 
+wp_reset_query();
+$strContent.='</div>';
+
+if($getOptions['str_viewall']==1): 
+$strContent.='<div class="view-all"><a href="'.$getOptions['str_viewall_page'].'">View All</a></div>';
+endif; 
+$strContent.='</div>';
+return $strContent;
+
+}
+/* Shortcode for display the testimonial rutator*/
+add_shortcode('str-random','get_str_random_testimonial');
 ?>

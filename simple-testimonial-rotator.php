@@ -3,7 +3,7 @@
 Plugin Name: Simple Testimonial Rotator
 Plugin URI: http://raghunathgurjar.wordpress.com
 Description: "Simple Testimonial Rotator" is a very simple plugins for add to testimonials on your site. 
-Version: 1.3
+Version: 1.4
 Text Domain: raghunath
 Author: Raghunath Gurjar
 Author URI: http://www.facebook.com/raghunathprasadgurjar
@@ -33,6 +33,7 @@ function str_testimonials_init(){
 	register_setting('str_testimonial_options','str_sortby');	
 	register_setting('str_testimonial_options','str_orderby');
 	register_setting('str_testimonial_options','str_viewall');
+	register_setting('str_testimonial_options','str_content_limit');
 	register_setting('str_testimonial_options','str_viewall_page');
 } 
 
@@ -57,6 +58,13 @@ function str_testimonials_admin_option_page(){ ?>
 				<td >
 				<select id="str_effect" name="str_effect">
 				<option value="fade" <?php if(get_option('str_effect')=='fade'){echo 'selected="selected"';}?>>fade</option>
+				<option value="scrollUp" <?php if(get_option('str_effect')=='scrollUp'){echo 'selected="selected"';}?>>scrollUp</option>
+				<option value="scrollDown" <?php if(get_option('str_effect')=='scrollDown'){echo 'selected="selected"';}?>>scrollDown</option>
+				<option value="scrollRight" <?php if(get_option('str_effect')=='scrollRight'){echo 'selected="selected"';}?>>scrollRight</option>
+				
+				<option value="scrollLeft" <?php if(get_option('str_effect')=='scrollLeft'){echo 'selected="selected"';}?>>scrollLeft</option>
+				
+				<option value="shuffle" <?php if(get_option('str_effect')=='shuffle'){echo 'selected="selected"';}?>>shuffle</option>
 				</select>
 				</td>
 				<td rowspan="10" valign="top" style="border-left: 1px solid rgb(204, 204, 204); padding-left: 20px;">
@@ -67,13 +75,14 @@ function str_testimonials_admin_option_page(){ ?>
 	Other Plugins:<br>
 	<ul>
 		<li><a href="http://wordpress.org/plugins/custom-share-buttons-with-floating-sidebar" target="_blank">Custom share buttons with floating sidebar</a></li>
+		<li><a href="http://wordpress.org/plugins/wp-social-buttons" target="_blank">WP Social Buttons</a></li><li><a href="http://wordpress.org/plugins/wp-easy-recipe" target="_blank">WP Easy Recipe</a></li><li><a href="http://wordpress.org/plugins/wp-youtube-gallery" target="_blank">WP Youtube Gallery</a></li>
 		</ul>
 	</div></td>
 			</tr>	
 			<tr>
-				<th><?php echo 'Delay Time:';?></th>
+				<th><?php echo 'Speed:';?></th>
 				<td>
-					<input type="text" id="str_speed" name="str_speed" value="<?php echo esc_attr(get_option('str_speed')); ?>" size="5"/><br>Default time is 5000
+					<input type="text" id="str_speed" name="str_speed" value="<?php echo esc_attr(get_option('str_speed')); ?>" size="5" placeholder="5000"/>ms 
 				</td>
 			</tr>
 			<tr>
@@ -95,6 +104,12 @@ function str_testimonials_admin_option_page(){ ?>
 				</td>
 			</tr>
 			<tr>
+				<td><?php echo 'Content Limit (Rotator):';?></td>
+				<td>
+					<input type="text" id="str_content_limit" name="str_content_limit" value="<?php echo esc_attr(get_option('str_content_limit')); ?>" size="30" placeholder="400"/>
+				</td>
+			</tr>
+			<tr>
 				<th><?php echo 'View All:';?></th>
 				<td>
 					<input type="checkbox" id="str_viewall" name="str_viewall" <?php if(get_option('str_viewall')!=''):echo 'checked="checked"';endif; ?> size="5" value="1"/>Show the "View All" links in testiomonial sidebar
@@ -106,7 +121,11 @@ function str_testimonials_admin_option_page(){ ?>
 			<tr>
 				<th>&nbsp;</th>
 				<td><?php echo get_submit_button('Save Settings','button-primary','submit','','');?></td>
-			</tr>	
+			</tr>
+			<tr><td colspan="3">&nbsp;</td></tr>	
+			<tr><td colspan="3"><strong>Shortcode</strong></td></tr>
+			<tr><td colspan="3">[str-random] for add to testimonial rotator on any page/post</td></tr>
+			<tr><td colspan="3">[str_testimonials] for publish all testimonials on a single page</td></tr>
 			<tr><td colspan="3">&nbsp;</td></tr>		
 		</table>
     <?php settings_fields('str_testimonial_options'); ?>
