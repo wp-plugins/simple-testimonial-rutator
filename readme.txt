@@ -6,13 +6,11 @@ Requires at least: 3.0
 Tested up to: 4.0
 Stable tag: 1.4
 
-Add "Simple Testimonial Rotator" Responsive Widget on your website.
+Add Testimonials Rotator on your website.
 
 == Description ==
 
-"Simple Testimonial Rotator" is a very simple plugin for add to "Auto Rotator Testimonials" widget (with fade effect) on your site without adding any extra js files.
-
-"Simple Testimonial Rotator Widget" is a responsive widget.
+"Simple Testimonial Rotator" is a very simple plugin for add to "Auto Rotator Testimonials" in sidebar widget OR any page/post (using shortcode).
 
 = Features =
 
