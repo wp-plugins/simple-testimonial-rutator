@@ -1,0 +1,63 @@
+﻿/** 
+ * Simple Testimonial Rotator
+ * @CSS 2014
+ * @version 1.4
+ * */
+#str_testimonial_list {width:100%;height: auto;padding: 10px;}
+#str_testimonial_list blockquote {padding:5px; margin:inherit; width:100%; height:auto;}
+#str_testimonial_list cite img {float:left;padding:5px}
+#str_testimonial_list cite {display:block; background:#FAEBBC;}
+#str_testimonial_list .str_author span {vertical-align:top; display: block;}
+#str_testimonial_list a {color:#A3220A;}
+#str_testimonial_list p {margin:inherit;}
+#str_testimonial_list .str_author {
+    display: block;
+    float: right;
+    padding-right: 5px;
+    text-align: right;
+    width: auto;
+    font-weight:bold;
+    color:#A3220A;
+}
+#str_testimonial_list .str_author img {}
+#str_testimonial_list .authorRole {display:block;font-weight:normal;}
+#str_testimonial_list blockquote.style1 {
+  font: 14px/20px italic Times, serif;
+  padding: 8px;
+  background-color: #faebbc;
+  border-top: 1px solid #e1cc89;
+  margin: 5px;
+   float: left;
+  text-indent: 23px;
+  }
+#str_testimonial_list div.content {background: none repeat scroll 0 0 #FAEBBC;
+    font-style: italic;
+    line-height: 24px;
+    margin: 0;
+    overflow: hidden;
+    padding-left: 10px;
+    position: relative;}
+#str_testimonial_list div.content span.laquo{background:url(images/openquote1.gif) no-repeat;width:25px;height:25px;position:absolute;left:0;top:4px;display:block;}
+#str_testimonial_list div.content span.raquo{background:url(images/closequote1.gif) no-repeat right 4px;width:25px;height:25px;padding-left:4px;display:inline-block;}
+
+/** rotator shortcode */
+#strRandom {width:100%;height:auto;position:relative; clear:both;}
+#strRandom .view-all a {color:#21759B;}
+#strRandom #strTestimonials {width:100% position:relative; background:#FAEBBC; max-height:168px;}
+#strRandom #strTestimonials blockquote {color:#808080; display:block; font-family:"Open Sans",Helvetica,Arial,sans-serif;font-style:normal; font-size:12px; margin:inherit; }
+#strRandom #strTestimonials blockquote p {padding-left:5px; padding-right:5px;}
+#strRandom .strTestimonial p span.laquo{background:url(images/openquote1.gif) no-repeat;width:25px;height:25px;position:absolute;left:0;display:block;}
+#strRandom .strTestimonial p span.raquo{background:url(images/closequote1.gif) no-repeat right 4px;width:25px;height:25px;padding-left:4px;display:inline-block;}
+#strRandom #strTestimonials blockquote cite {font-style:normal; display: block; margin-top:10px; font-weight: bold; text-align:right; color: #555555; font-size:14px;}
+#strRandom #strTestimonials blockquote cite .designation {display:block;color: #cccccc;font-style:normal;font-size:14px;}
+/** testimonial widget */
+#strWidget {width:100%;height:auto;position:relative; clear:both;}
+#strWidget .view-all a {color:#21759B;}
+#strWidget #strTestimonialsWidget {width:100% position:relative; background:#FAEBBC;}
+#strWidget #strTestimonialsWidget blockquote {color:#808080; display:block; font-family:"Open Sans",Helvetica,Arial,sans-serif;font-style:normal; font-size:12px;  margin:inherit; padding:inherit; }
+#strWidget #strTestimonialsWidget blockquote {padding:5px;}
+#strWidget #strTestimonialsWidget blockquote p {padding-left:22px; padding-right:5px;}
+#strWidget .strTestimonial p span.laquo{background:url(images/openquote1.gif) no-repeat;width:25px;height:25px;position:absolute;left:0;display:block;}
+#strWidget .strTestimonial p span.raquo{background:url(images/closequote1.gif) no-repeat right 4px;width:25px;height:25px;padding-left:4px;display:inline-block;}
+#strWidget #strTestimonialsWidget blockquote cite {font-style:normal; display: block; margin-top:10px; font-weight: bold; text-align:right; color: #555555; font-size:14px;}
+#strWidget #strTestimonialsWidget blockquote cite .designation {display:block;color: #cccccc;font-style:normal;font-size:14px;}
